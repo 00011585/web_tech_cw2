@@ -1,0 +1,12 @@
+extends layout
+
+block content 
+  ul.container
+    each blog in blogs
+      li
+        .wrapper
+          h3= blog.title
+          h3= blog.topic
+          h3.right
+            a(href="/blogs/" + blogs.id)  View
+      hr

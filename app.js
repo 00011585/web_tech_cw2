@@ -4,8 +4,6 @@ const fs = require('fs')
 
 app.set('view engine', 'pug')
 
-// app.use('/blogs', blogs)
-
 app.use(express.urlencoded( {extended: false }))
 
 app.use('/static', express.static('./public'))
@@ -62,6 +60,13 @@ app.get('/blogs/:id', (req, res) => {
   })
 })
 
+app.get('/api/v1/blogs', (req, res) => {
+  fs.readFile('./data/blogs.json', (err, data) => {
+    if (err) throw err
+    const blogs = JSON.parse(data)
+    res.json(blogs)
+  })
+})
 
 
 app.listen(5050, () => console.log('App is running on port 5050...'))

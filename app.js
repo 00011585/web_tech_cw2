@@ -52,6 +52,16 @@ app.get('/blogs', (req, res) => {
   })
 })
 
+app.get('/blogs/:id', (req, res) => {
+  const id = req.params.id
+  fs.readFile('./data/blogs.json', (err, data) => {
+    if (err) throw err
+    const blogs = JSON.parse(data)
+    const blog = blogs.find(blog => blog.id === id)
+    res.render('view', {blog})
+  })
+})
+
 
 
 app.listen(5050, () => console.log('App is running on port 5050...'))

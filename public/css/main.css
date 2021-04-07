@@ -63,3 +63,34 @@ footer {
   padding: 1em;
   font-size: 1.3em;
 }
+
+.create:hover {
+  background-color: rgb(121, 120, 120);
+  color: #fff;
+}
+
+form {
+  font-size: 1.3em;
+}
+
+input,
+textarea {
+  font-size: 1.3em;
+  padding: 0.3em;
+  width: 60%;
+}
+
+label {
+  display: block;
+  margin-top: 2em;
+}
+
+.submit {
+  margin: 1em 0 3em;
+  cursor: pointer;
+}
+
+.submit:hover {
+  background-color: rgb(121, 120, 120);
+  color: #fff;
+}
